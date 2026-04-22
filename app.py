@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 import joblib
 
@@ -38,10 +37,10 @@ else:
     maintenance = 1
 
 # Feature Engineering
-energy_per_unit = power / production_speed
-error_per_output = error_rate / production_speed
-network_quality = (100 - packet_loss) / latency
-sensor_stability = temperature / vibration
+energy_per_unit = power / production_speed if production_speed != 0 else 0
+error_per_output = error_rate / production_speed if production_speed != 0 else 0
+network_quality = (100 - packet_loss) / latency if latency != 0 else 0
+sensor_stability = temperature / vibration if vibration != 0 else 0
 
 input_data = np.array([[temperature, vibration, power, latency, packet_loss,
                         defect_rate, production_speed, maintenance_score,
