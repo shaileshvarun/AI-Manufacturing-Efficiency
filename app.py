@@ -1,11 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
+
+model = joblib.load("model.pkl")
+scaler = joblib.load("scaler.pkl")
+
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
 
 st.title("AI-Based Manufacturing Efficiency Dashboard")
 
