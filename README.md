@@ -65,7 +65,7 @@ View prediction confidence
 pip install pandas numpy scikit-learn streamlit xgboost
 2. Run the App
 streamlit run app.py
-📂 Project Structure
+### Project Structure
 ├── app.py
 ├── model.pkl
 ├── scaler.pkl
